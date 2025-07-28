@@ -1,0 +1,205 @@
+/* Reset and Base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #5b2d90;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #5b2d90;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+.logo-text {
+  font-size: 32px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  padding: 40px 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.left {
+  flex: 1;
+  max-width: 55%;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.right img {
+  margin-top: 70px;
+  max-width: 60%;
+  height: auto;
+  border-radius: 20px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+/* Text */
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.subtext {
+  font-weight: 900;
+  margin: 10px 0;
+  font-size: 30px;
+}
+
+/* Button Styling */
+#randomQuizBtn, .left button {
+  background-color: orange;
+  color: black;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 25px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+#randomQuizBtn:hover, .left button:hover {
+  background-color: #ffb84d;
+}
+
+/* Scrollable Category Section */
+.categories {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+
+  /* Hide scrollbar in all browsers */
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;      /* Internet Explorer and Edge */
+}
+
+.categories::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari */
+}
+
+/* Category Card */
+.category-card {
+  flex: 0 0 auto;
+  width: 170px;
+  background-color: #9575cd;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 2px solid orange;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.category-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 2px solid orange;
+}
+
+.category-card button {
+  width: 100%;
+  border: none;
+  padding: 10px 0;
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0 0 15px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.category-card button:hover {
+  background-color: #ffb84d;
+}
+
+/* Quiz Page Styling (quiz.html) */
+.quiz-title {
+  text-align: center;
+  background-color: #7e57c2;
+  padding: 15px;
+  border-radius: 20px;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.quiz-box {
+  background-color: #7e57c2;
+  padding: 30px;
+  border-radius: 25px;
+  width: 80%;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.next-btn {
+  display: none;
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+  background-color: #ffb84d;
+}
+
+.result-box {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}

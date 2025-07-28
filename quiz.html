@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quizopia - Quiz</title>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="https://surjeet-quizapp.netlify.app/img/science%20(5).jpg" alt="Logo" class="logo">
+      <span class="logo-text">LOGO</span>
+    </div>
+  </header>
+
+  <!-- Timer Display -->
+  <div class="center">
+    <p id="timerDisplay" style="font-weight: bold; font-size: 18px;">Time left: --:--</p>
+  </div>
+
+  <!-- Quiz Title -->
+  <h2 id="quiz-title" class="quiz-title"></h2>
+
+  <!-- Quiz Content -->
+  <div id="quiz-content" class="quiz-box"></div>
+
+  <!-- Next Button -->
+  <div class="center">
+    <button id="nextBtn" class="next-btn">Next</button>
+  </div>
+
+  <!-- Result -->
+  <div id="result" class="result-box"></div>
+
+  <!-- Scripts -->
+  <script src="quiz-page.js"></script>
+  <script>
+    // Countdown Timer Logic
+    let totalTime = 300; // 5 minutes = 300 seconds
+    let timerInterval;
+
+    function startTimer() {
+      const timerDisplay = document.getElementById("timerDisplay");
+
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(totalTime / 60);
+        const seconds = totalTime % 60;
+
+        timerDisplay.textContent = `Time left: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+        if (totalTime <= 0) {
+          clearInterval(timerInterval);
+          alert("⏰ Time's up! Your quiz will now be submitted.");
+          autoSubmitQuiz(); // Auto submit on timeout
+        }
+
+        totalTime--;
+      }, 1000);
+    }
+
+    function autoSubmitQuiz() {
+      // Replace this logic with real submission logic
+      // If using quiz-page.js to handle answer checking, you may call its method here
+      document.getElementById("nextBtn").click(); // simulate finish or next click
+    }
+
+    window.onload = function () {
+      startTimer();
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quizopia - Home</title>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+
+
+  <header class="header">
+    <div class="logo-container">
+      <img src="https://surjeet-quizapp.netlify.app/img/science%20(5).jpg" alt="Logo" class="logo" />
+      <span class="logo-text">LOGO</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="left">
+      <h1>Quizopia Your Gateway<br>to Trivia Nirvana!</h1>
+
+      <!-- Random Quiz Button -->
+      <button id="randomQuizBtn">Random Quiz</button>
+
+      <p class="subtext">PLAY, LEARN AND ENJOY!</p>
+
+      <!-- Scrollable Category Cards -->
+      <div class="categories">
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/history.jpg" alt="Indian History">
+          <button onclick="location.href='quiz.html?category=Indian History'">INDIAN HISTORY</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/gk.jpg" alt="General Knowledge">
+          <button onclick="location.href='quiz.html?category=General Knowledge'">GENERAL KNOWLEDGE</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/science%20(1).jpg" alt="Science">
+          <button onclick="location.href='quiz.html?category=Science'">SCIENCE</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/maths.jpg" alt="Mathematics">
+          <button onclick="location.href='quiz.html?category=Mathematics'">MATHEMATIC</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/geography%202.jpg" alt="Indian Geography">
+          <button onclick="location.href='quiz.html?category=Indian Geography'">INDIAN GEOGRAPHY</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/literature.jpeg" alt="Indian Literature">
+          <button onclick="location.href='quiz.html?category=Indian Literature'">INDIAN LITERATURE</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/world%20history.jpeg" alt="World History">
+          <button onclick="location.href='quiz.html?category=world history'">WORLD HISTORY</button>
+        </div>
+        <div class="category-card">
+          <img src="https://surjeet-quizapp.netlify.app/img/techonology.jpg" alt="Technology">
+          <button onclick="location.href='quiz.html?category=Technology'">TECHNOLOGY</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <img src="https://surjeet-quizapp.netlify.app/img/small2.jpg" alt="Character" />
+    </div>
+  </section>
+
+  <script>
+    const categories = [
+      "Indian History",
+      "General Knowledge",
+      "Science",
+      "Mathematics",
+      "Indian Geography",
+      "Technology"
+    ];
+
+    document.getElementById("randomQuizBtn").addEventListener("click", function() {
+      const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+      window.location.href = `quiz.html?category=${encodeURIComponent(randomCategory)}`;
+    });
+  </script>
+</body>
+</html>
